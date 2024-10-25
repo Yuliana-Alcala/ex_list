@@ -17,12 +17,12 @@ public class HandlerWeekDays {
 
        
     }
-       //Geter
+    //Geter
     public List<String> getDays() {
         return days;
     }
 
-    //seter y getter modificar y recuperar atributos de clase
+    //Seter y getter modificar y recuperar atributos de clase
     public void setDays(List<String> days) {
         this.days = days;
     }
