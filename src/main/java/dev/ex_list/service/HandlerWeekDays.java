@@ -58,7 +58,7 @@ public class HandlerWeekDays {
     
     //Un método que retorne el día de la semana solicitado
   
-    public String getSpecificDayByName(int index){
+    public String getSpecificDayById(int index){
        
         if (index >= 0 && index < days.size()) {
             return days.get(index); 

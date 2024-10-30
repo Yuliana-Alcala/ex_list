@@ -43,11 +43,11 @@ public class HandlerWeekDaysTest {
     }
 
 	@Test
-	void testGetSpecificDayByName() {
+	void testGetSpecificDayById() {
         HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
         String expectedDay = "Lunes";
 
-        assertThat(handlerWeekDays.getSpecificDayByName(0), is(expectedDay));
+        assertThat(handlerWeekDays.getSpecificDayById(0), is(expectedDay));
     }
 		
 }
