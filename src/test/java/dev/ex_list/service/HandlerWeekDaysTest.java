@@ -34,6 +34,13 @@ public class HandlerWeekDaysTest {
         assertThat(handlerWeekDays.getSizeList(), is(7));
         
     }
+    @Test
+        void testDeleteDay() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+        handlerWeekDays.deleteDay();
+
+        assertThat(handlerWeekDays.days.size(), is(6)); 
+    }
 
   
 

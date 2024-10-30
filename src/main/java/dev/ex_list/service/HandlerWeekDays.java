@@ -50,6 +50,14 @@ public class HandlerWeekDays {
         return days.size();
 
     }
+   //Un método para eliminar un día de la semana
+    public void deleteDay(){
+        days.remove(0);
+    
+    }
+    
+  
+    
    
     
 }
