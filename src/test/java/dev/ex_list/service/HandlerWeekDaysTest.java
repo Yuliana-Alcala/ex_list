@@ -49,6 +49,15 @@ public class HandlerWeekDaysTest {
 
         assertThat(handlerWeekDays.getSpecificDayById(0), is(expectedDay));
     }
+
+    @Test
+    void testDayExistInList() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+        String expectedMessage = "El día no existe en la lista";
+
+        assertThat(handlerWeekDays.dayExistInList(7), is(expectedMessage));
+        
+    }
 		
 }
 

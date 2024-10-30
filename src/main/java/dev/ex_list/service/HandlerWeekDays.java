@@ -67,6 +67,16 @@ public class HandlerWeekDays {
         }
         
     }
+     //Un método que retorne si el día solicitado existe en la lista
+
+    public String dayExistInList(int index){
+        if (index >= 0 && index < days.size()) {
+            return "El día existe en la lista"; 
+        } else {
+            return "El día no existe en la lista";
+        }
+
+    }
    
     
 }
