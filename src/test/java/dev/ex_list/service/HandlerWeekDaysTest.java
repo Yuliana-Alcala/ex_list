@@ -11,7 +11,7 @@ public class HandlerWeekDaysTest {
     void testCreateList() {
         HandlerWeekDays handlerWeekDays = new HandlerWeekDays();//1
 
-        //handlerWeekDays.createList();como createList no retorna nada no tengo forma de evaluar el valor que viene.En este caso necesitamos un constructor en el que se llamará al método createList.
+       
         
         assertThat(handlerWeekDays.days.size(), is(7));
         
@@ -20,7 +20,7 @@ public class HandlerWeekDaysTest {
     @Test
     void testGetDays() {
         HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
-        // Usa el getter para obtener la lista de días como la lista esperada
+     
 
         List<String> expectedList = handlerWeekDays.getDays();
         assertThat(handlerWeekDays.getDays(), is(expectedList));
@@ -58,6 +58,26 @@ public class HandlerWeekDaysTest {
         assertThat(handlerWeekDays.dayExistInList(7), is(expectedMessage));
         
     }
+
+    @Test
+    void testSortByAlphabeticalOrder() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+       
+
+        List<String> expectedList = handlerWeekDays.getDays();
+        assertThat(handlerWeekDays.getDays(), is(expectedList));
+        
+    }
+
+	@Test
+	void testEmptylist() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+
+        
+        assertThat(handlerWeekDays.emptyList(), is(true)); 
+
+		
+	}
 		
 }
 
