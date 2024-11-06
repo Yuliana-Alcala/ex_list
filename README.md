@@ -19,10 +19,14 @@ Un método para ordenar la lista de días por orden alfabético
 Un método para vaciar la lista
 
 # Requisitos :
+
 Se debe realizar un test unitario de cada método (coverage mínimo 70%)
+
 Se debe utilizar la colección "List" de java.util
 
 # Entrega :
 Repositorio de GitHub (enlace)
+
 Diagrama de clase
+
 Captura de pantalla de la sección "Testing" de visual studio code donde se aprecia el coverage de los test
