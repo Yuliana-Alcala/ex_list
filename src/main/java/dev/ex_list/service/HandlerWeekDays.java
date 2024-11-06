@@ -9,11 +9,11 @@ public class HandlerWeekDays {
     public List<String> days;
     public HandlerWeekDays() {
         
-        createList();
+       createList();
        
     }
 
-    
+    //retorne los días de la semana
     public List<String> getDays() {
         return days;
     }
@@ -24,8 +24,7 @@ public class HandlerWeekDays {
     }
  
 
-
-    
+    //crear la lista de los días de la semana
     private void createList() {
         days = new ArrayList<String>();
      
@@ -40,51 +39,70 @@ public class HandlerWeekDays {
     }
     
  
-   
+   //retorne el largo de la lista
     public int getSizeList(){
         
         return days.size();
 
     }
    
-    public void deleteDay(){
-        days.remove(0);
+    //eliminar un día de la semana
+    public String deleteDay(String dayDelete){
+        for(Integer index=0; index < days.size(); index ++) {
+            if (days.get(index).equals(dayDelete)){             
+                days.remove(dayDelete);
+                return "Día eliminado correctamente";
+            }
+                          
+        }
+        System.out.println(days.size());
+        return "Día no encontrado";  
+        
     
     }
     
     
-  
-    public String getSpecificDayById(int index){
-       
-        if (index >= 0 && index < days.size()) {
-            return days.get(index); 
-        } else {
-            return "Índice fuera de rango";
+   //retorne el día de la semana solicitado
+    public String getSpecificDayById(String daySolicited){
+                   
+        for(Integer index=0; index < days.size(); index ++) {
+          if (days.get(index).equals(daySolicited)){
+            
+            return days.get(index);
+            
+          }
+                        
         }
+       return "Día no encontrado";   
         
     }
      
-
-    public String dayExistInList(int index){
-        if (index >= 0 && index < days.size()) {
-            return "El día existe en la lista"; 
-        } else {
-            return "El día no existe en la lista";
+    //retorne si el día solicitado existe en la lista
+    public String dayExistInList(String daySolicited){
+                   
+        for(Integer index=0; index < days.size(); index ++) {
+          if (days.get(index).equals(daySolicited)){
+            
+            return "El día si existe en la lista";
+            
+          }
+                        
         }
+        return "Día no xiste en la lista";
 
     }
 
-
-    public void sortByAlphabeticalOrder(List<String> days) {       
+    //ordenar la lista de días por orden alfabético
+    public List<String> sortByAlphabeticalOrder() {
         Collections.sort(days);
         System.out.println("Días ordenados: " + days);
+        return days;
     }
 
+     //método para vaciar la lista
     public boolean emptyList(){
         days.clear();
         return days.isEmpty();
-
-
     }
     
 }
