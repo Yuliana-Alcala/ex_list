@@ -3,16 +3,16 @@ package dev.ex_list.service;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import org.junit.jupiter.api.Test;
+
+
 import java.util.List;
 
 public class HandlerWeekDaysTest {
 
     @Test
     void testCreateList() {
-        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();//1
-
-        //handlerWeekDays.createList();como createList no retorna nada no tengo forma de evaluar el valor que viene.En este caso necesitamos un constructor en el que se llamará al método createList.
-        
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+       
         assertThat(handlerWeekDays.days.size(), is(7));
         
     }
@@ -20,8 +20,7 @@ public class HandlerWeekDaysTest {
     @Test
     void testGetDays() {
         HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
-        // Usa el getter para obtener la lista de días como la lista esperada
-
+     
         List<String> expectedList = handlerWeekDays.getDays();
         assertThat(handlerWeekDays.getDays(), is(expectedList));
     }
@@ -30,19 +29,55 @@ public class HandlerWeekDaysTest {
     void testGetSizeList() {
         HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
        
-        
-        assertThat(handlerWeekDays.getSizeList(), is(7));
+        assertThat(handlerWeekDays.getSizeList(),is(7));
         
     }
     @Test
         void testDeleteDay() {
         HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
-        handlerWeekDays.deleteDay();
+        String result = handlerWeekDays.deleteDay("Lunes");
 
-        assertThat(handlerWeekDays.days.size(), is(6)); 
+        assertThat(result, is("Día eliminado correctamente")); 
     }
+
+	@Test
+	void testGetSpecificDayById() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+
+        String result = handlerWeekDays.getSpecificDayById("Lunes");
+        assertThat(result, is("Lunes"));     
+       
+    }
+
+    @Test
+    void testDayExistInList() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+
+        String result = handlerWeekDays.dayExistInList("Lunes");
+        assertThat(result, is("El día si existe en la lista"));     
+    }
+
+    @Test
+    void testSortByAlphabeticalOrder() {
+        
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+
+        
+        List<String> expectedList = List.of("Domingo", "Jueves", "Lunes", "Martes", "Miercoles", "Sabado", "Viernes");       
+       
+        assertThat(handlerWeekDays.sortByAlphabeticalOrder(), is(expectedList));       
+        
+    }
+ 
+	@Test
+	void testEmptylist() {
+        HandlerWeekDays handlerWeekDays = new HandlerWeekDays();
+        
+        assertThat(handlerWeekDays.emptyList(), is(true));		
+	}
+	
+}
 
   
 
 
-}
